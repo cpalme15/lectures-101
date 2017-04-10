@@ -1,0 +1,14 @@
+int counter =0;
+		Node temp=head;
+		
+		while(temp!=null)
+		{
+			counter++;
+			if(temp.getData()==x)
+			{
+				return "Found at node position "+counter;
+			}
+				temp=temp.getNext();
+		}
+		return "Not Found";
+		
