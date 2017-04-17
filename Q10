@@ -2,16 +2,16 @@
 				
              if(head.getNext()==p911)
 		   {
-			   Node temp=head.getNext();
+			   StudentNode temp=head.getNext();
 			   p911.putNext(null);
 			   p007.putNext(p911);
 			   head.putNext(p007);
 		   }
 
-		   Node prev9 = head;
-		   Node cur9 = head;
-		   Node prev7 = head;
-		   Node cur7 = head;
+		   StudentNode prev9 = head;
+		   StudentNode cur9 = head;
+		   StudentNode prev7 = head;
+		   StudentNode cur7 = head;
 
 		   while(cur9 != null && !(cur9==p911))
 		   {
@@ -24,8 +24,8 @@
 		      cur7 = cur7.getNext();
 		   }
 		   if(cur9 != null&&cur7!=null){
-			   Node after9=cur9.getNext();
-			   Node after7=cur7.getNext();
+			   StudentNode after9=cur9.getNext();
+			   StudentNode after7=cur7.getNext();
 			   prev9.putNext(cur7); 
 			   cur9.putNext(after7);
 			   cur7.putNext(after9);
