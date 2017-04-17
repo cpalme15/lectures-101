@@ -1,0 +1,35 @@
+Node cur=head;
+			Node prev=head;
+			Node temp=null;
+			if(head==null)
+			{
+				return "Not Found";
+			}
+			if(head.getData()==x)
+			{
+					if(head.getNext()==null)
+					{
+						head=null;
+						return "deleted "+x;
+					}
+					else
+					{
+						temp=head.getNext();
+						head.putNext(null);
+						head=temp;
+						return "deleted "+x;
+					}
+			}
+			while(cur!=null && cur.getData()!= x)
+			{
+				prev=cur;
+				cur=cur.getNext();
+			}
+			if(cur!=null)
+			{
+				prev.putNext(cur.getNext());
+				cur.putNext(null);
+				return "deleted "+x;
+					
+			}
+			return "Not Found";
