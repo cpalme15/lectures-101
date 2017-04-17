@@ -8,17 +8,27 @@
 			   head.putNext(p007);
 		   }
 
-		   Node prev = head;
-		   Node cur = head;
+		   Node prev9 = head;
+		   Node cur9 = head;
+		   Node prev7 = head;
+		   Node cur7 = head;
 
-		   while(cur != null && !(cur==p911))
+		   while(cur9 != null && !(cur9==p911))
 		   {
-		      prev = cur;
-		      cur = cur.getNext();
+		      prev9 = cur9;
+		      cur9 = cur9.getNext();
 		   }
-		   if(cur != null){
-			   Node temp = new Node(n, cur);
-			   prev.putNext(temp); 
-			   return"insert before "+ m+" "+n +" done";
+		   while(cur7 != null && !(cur7==p007))
+		   {
+		      prev7 = cur7;
+		      cur7 = cur7.getNext();
 		   }
-		return m+" not Found";
+		   if(cur9 != null&&cur7!=null){
+			   Node after9=cur9.getNext();
+			   Node after7=cur7.getNext();
+			   prev9.putNext(cur7); 
+			   cur9.putNext(after7);
+			   cur7.putNext(after9);
+			   prev7.putNext(cur9);
+		   }
+		
