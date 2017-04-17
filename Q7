@@ -1,0 +1,23 @@
+if(head == null)
+				return m + " not found";
+                if(head.getData()==m)
+		   {
+			   Node tmp = new Node(n, head);
+			   head = tmp;
+			   return"insert before "+ m+" "+n +" done";		   
+		   }
+
+		   Node prev = head;
+		   Node cur = head;
+
+		   while(cur != null && !(cur.getData()==m))
+		   {
+		      prev = cur;
+		      cur = cur.getNext();
+		   }
+		   if(cur != null){
+			   Node temp = new Node(n, cur);
+			   prev.putNext(temp); 
+			   return"insert before "+ m+" "+n +" done";
+		   }
+		return m+" not Found";
