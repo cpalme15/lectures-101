@@ -1,0 +1,24 @@
+ if(head == null)
+				
+             if(head.getNext()==p911)
+		   {
+			   Node temp=head.getNext();
+			   p911.putNext(null);
+			   p007.putNext(p911);
+			   head.putNext(p007);
+		   }
+
+		   Node prev = head;
+		   Node cur = head;
+
+		   while(cur != null && !(cur==p911))
+		   {
+		      prev = cur;
+		      cur = cur.getNext();
+		   }
+		   if(cur != null){
+			   Node temp = new Node(n, cur);
+			   prev.putNext(temp); 
+			   return"insert before "+ m+" "+n +" done";
+		   }
+		return m+" not Found";
